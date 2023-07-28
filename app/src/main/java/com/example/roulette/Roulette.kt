@@ -5,6 +5,8 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import java.lang.Math.cos
+import java.lang.Math.sin
 import java.lang.RuntimeException
 
 class Roulette @JvmOverloads constructor(
@@ -18,7 +20,7 @@ class Roulette @JvmOverloads constructor(
     private val fillPaint = Paint()
     private val textPaint = Paint()
 
-    private var rouletteSize = 8
+    private var rouletteSize = 2
     private var rouletteDataList = listOf()
 
     init {
@@ -59,12 +61,21 @@ class Roulette @JvmOverloads constructor(
 
         if(rouletteSize in 2.. 8) {
             val sweepAngle = 360f / rouletteSize.toFloat()
+            val centerX = (rectF.left + rectF.right) / 2
+            val centerY = (rectF.top + rectF.bottom) / 2
+            val radius = (rectF.right - rectF.left) / 2 * 0.5
             val colors = listOf("#fe4a49", "#2ab7ca", "#fed766", "#e6e6ea", "#f6abb6", "#005b96", "#7bc043", "#f37735")
+
             for(i in 0 until rouletteSize) {
                 fillPaint.color = Color.parseColor(colors[i])
 
                 val startAngle = if (i==0) 0f else sweepAngle * i
                 canvas?.drawArc(rectf, startAngle, sweepAngle, true, fillPaint)
+
+                val medianAngle = (startAngle + sweepAngle / 2f) * Math.PI / 180f
+                val x = (centerX + (radius * cos(medianAngle))).toFloat()
+                val y = (centerY + (radius * sin(medianAngle))).toFloat()
+                val text = if (i  >rouletteDataList.size - 1) "empty" else rouletteDataList[i]
             }
         } else throw RuntimeException("size out of roulette")
     }
