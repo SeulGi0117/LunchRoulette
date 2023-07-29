@@ -5,7 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    
+
+    <com.jhdroid.view.Roulette
+        android:id="@+id/roulette"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/rotate_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/rotate_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotate"
+        android:onClick="@{() -> activity.rotateRoulette()}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 <!--    <TextView-->
 <!--        android:id="@+id/rotate_result_tv"-->
 <!--        android:layout_width="wrap_content"-->
@@ -20,38 +40,37 @@
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:layout_constraintBottom_toTopOf="@+id/roulette"/>-->
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/size_plus_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_plus_btn_48"
-        app:layout_constraintBottom_toBottomOf="@+id/roulette_size_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/roulette_size_tv"/>
+<!--    <androidx.appcompat.widget.AppCompatImageButton-->
+<!--        android:id="@+id/size_plus_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:src="@drawable/ic_plus_btn_48"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/roulette_size_tv"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/roulette_size_tv"/>-->
 
-    <TextView
-        android:id="@+id/roulette_size_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="2"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toStartOf="@+id/size_plus_btn"
-        app:layout_constraintTop_toTopOf="parent"/>
+<!--    <TextView-->
+<!--        android:id="@+id/roulette_size_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:text="2"-->
+<!--        android:textSize="35sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/size_plus_btn"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/size_minus_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_minus_btn_48"
-        app:layout_constraintBottom_toBottomOf="@+id/roulette_size_tv"
-        app:layout_constraintEnd_toStartOf="@+id/roulette_size_tv"
-        app:layout_constraintTop_toTopOf="@+id/roulette_size_tv"/>
-
+<!--    <androidx.appcompat.widget.AppCompatImageButton-->
+<!--        android:id="@+id/size_minus_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:src="@drawable/ic_minus_btn_48"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/roulette_size_tv"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/roulette_size_tv"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/roulette_size_tv"/>-->
 
 
 
