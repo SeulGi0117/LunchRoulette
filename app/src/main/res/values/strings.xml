@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecommedLunch</string>
+
+    <!--menu-->
+    <string name="title_home">룰렛</string>
+    <string name="title_dashboard">추천</string>
+    <string name="title_notifications">주변</string>
+</resources>
